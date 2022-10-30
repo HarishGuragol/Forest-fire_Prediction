@@ -91,9 +91,9 @@ def predictR():
         output = model_R.predict(data)[0]
         log.info('Prediction done for Regression model')
         if output > 15:
-            return render_template('index.html', prediction_text2="Fuel Moisture Code index is {:.4f} ---- Warning!!! High hazard rating".format(output))
+            return render_template('index.html', prediction_text2="Forest Weather Index is {:.4f} ---- Warning!!! High hazard rating".format(output))
         else:
-            return render_template('index.html', prediction_text2="Fuel Moisture Code index is {:.4f} ---- Safe.. Low hazard rating".format(output))
+            return render_template('index.html', prediction_text2="Forest Weather Index is {:.4f} ---- Safe.. Low hazard rating".format(output))
     except Exception as e:
         log.error('Input error, check input', e)
         return render_template('index.html', prediction_text2="Check the Input again!!!")
